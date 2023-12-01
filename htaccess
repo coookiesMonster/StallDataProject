@@ -1,0 +1,8 @@
+Options -Indexes
+AddType application/x-httpd-php .php .html
+
+#diregera om all trafik till index.php
+
+RewriteEngine On 
+RewriteCond %{REQUEST_URI}  !(\.png|\.jpg|\.webp|\.gif|\.jpeg|\.zip|\.css|\.svg|\.js|\.pdf)$
+RewriteRule (.*) index.php [QSA,L]
